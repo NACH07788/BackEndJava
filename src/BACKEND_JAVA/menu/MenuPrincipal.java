@@ -16,25 +16,25 @@ public class MenuPrincipal {
             scanner.nextLine(); // Limpiar el buffer
 
             switch (opcion) {
-                case 0:
+                case 1:
                     agregarProducto();
                     break;
-                case 1:
+                case 2:
                     listarProductos();
                     break;
-                case 2:
+                case 3:
                     buscarActualizarProducto();
                     break;
-                case 3:
+                case 4:
                     eliminarProducto();
                     break;
-                case 4:
+                case 5:
                     crearPedido();
                     break;
-                case 5:
+                case 6:
                     listarPedidos();
                     break;
-                case 6:
+                case 7:
                     System.out.println("Saliendo del sistema. ¡Hasta luego!");
                     break;
                 default:
@@ -58,6 +58,8 @@ public class MenuPrincipal {
         System.out.println("7) Salir");
     }
     public static void agregarProducto() {
+        //Acá tengo que armar una lista de productos
+        //Y
         System.out.println("Función 'Agregar producto' aún no implementada.");
     }
 

@@ -8,7 +8,9 @@ public class Pedido {
     private
         int id;
         ArrayList <Producto> Productos = new ArrayList <>();
-        Pedido(){}
+        Pedido(){
+
+        }
     @Override
     public String toString(){
             return "ID: "+this.id + " Lista de Productos: " + this.Productos;

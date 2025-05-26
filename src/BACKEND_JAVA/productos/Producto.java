@@ -20,10 +20,10 @@ public abstract class Producto {
     public void setId(int id) {
         this.id = id;
     }
-    public void setNombre(String nombre) {
+    public void setNom(String nombre) {
         this.nombre = nombre;
     }
-    public void setPrecio(Double precio) {
+    public void setPre(Double precio) {
         this.precio = precio;
     }
     public void setStock(int stock) {
@@ -33,10 +33,10 @@ public abstract class Producto {
     public int getId() {
         return this.id;
     }
-    public String getNombre() {
+    public String getNom() {
         return this.nombre;
     }
-    public Double getPrecio() {
+    public Double getPre() {
         return this.precio;
     }
     public int getStock() {
@@ -45,6 +45,6 @@ public abstract class Producto {
     //
     @Override
     public String toString(){
-        return " Nombre:" + this.nombre + " Precio: "+ this.precio;
+        return "ID: "+this.id + " Nombre:" + this.nombre + " Precio: "+ this.precio + "Stock: " + this.stock;
     }
 }

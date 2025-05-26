@@ -11,8 +11,8 @@ public class Bebida extends Producto {
         verificar_fecha_venc(fecha_venc);
         this.fecha_vencimiento = LocalDate.parse(fecha_venc);
     }
-    String verficar_fecha_venc(){
-
+    String verificar_fecha_venc(String fecha_venc){
+        return "En construcción";
     }
 
 }
