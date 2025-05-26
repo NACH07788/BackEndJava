@@ -1,4 +1,4 @@
-package BACKEND_JAVA;
+package BACKEND_JAVA.productos;
 
 public class Producto {
     private
@@ -7,8 +7,8 @@ public class Producto {
         Double precio;
         int stock;
 
-    public producto(){}
-    public producto(int id, String nom, Double precio, int stock){
+    public Producto(){}
+    public Producto(int id, String nom, Double precio, int stock){
         this.id=id;
         this.nombre=nom;
         this.precio=precio;
@@ -28,7 +28,7 @@ public class Producto {
     }
     public void setStock(int stock) {
         this.stock = stock;
-
+    }
     //Getters
     public int getId() {
         return this.id;
@@ -45,6 +45,6 @@ public class Producto {
     //
     @Override
     public String toString(){
-        return " Nombre:" + this.nombre + " Precio: "+ this.precio + " "
+        return " Nombre:" + this.nombre + " Precio: "+ this.precio;
     }
 }
