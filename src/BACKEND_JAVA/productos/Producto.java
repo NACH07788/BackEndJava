@@ -16,20 +16,19 @@ public class Producto {
     }
 
     //Setters
+
     public void setId(int id) {
         this.id = id;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
     public void setPrecio(Double precio) {
         this.precio = precio;
     }
     public void setStock(int stock) {
         this.stock = stock;
-    }
+
     //Getters
     public int getId() {
         return this.id;
@@ -37,12 +36,15 @@ public class Producto {
     public String getNombre() {
         return this.nombre;
     }
-        public Double getPrecio() {
+    public Double getPrecio() {
         return this.precio;
     }
-
     public int getStock() {
         return this.stock;
     }
-
+    //
+    @Override
+    public String toString(){
+        return " Nombre:" + this.nombre + " Precio: "+ this.precio + " "
+    }
 }

@@ -1,7 +1,7 @@
-package BACKEND_JAVA;
+package BACKEND_JAVA.Main;
 import java.util.Scanner;
 
-public class SistemaGestionTechlab {
+public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
