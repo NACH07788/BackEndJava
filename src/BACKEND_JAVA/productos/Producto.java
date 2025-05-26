@@ -1,6 +1,6 @@
 package BACKEND_JAVA.productos;
 
-public class Producto {
+public abstract class Producto {
     private
         int id;
         String nombre;
