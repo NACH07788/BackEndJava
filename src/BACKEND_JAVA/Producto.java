@@ -1,3 +1,5 @@
+package BACKEND_JAVA;
+
 public class Producto {
     private
         int id;
