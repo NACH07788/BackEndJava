@@ -9,6 +9,15 @@ public class StockProductos {
     public void agregarProducto(Producto producto) {
         Productos.add(producto);
     }
+    public Producto buscarProductoPorId(int id) {
+        for (Producto p : Productos) {
+            if (p.getId() == id) {
+                return p;
+            }
+        }
+        return null;
+    }
+
     public void listarProductos(){
         for(Producto p: Productos){
             System.out.println(p);
@@ -26,7 +35,7 @@ public class StockProductos {
         try {
             int idBuscado = Integer.parseInt(entrada);
             // Buscar por ID
-            for (Producto p : productos) {
+            for (Producto p : Productos) {
                 if (p.getId() == idBuscado) {
                     productoEncontrado = p;
                     break;
@@ -34,8 +43,8 @@ public class StockProductos {
             }
         } catch (NumberFormatException e) {
             // Buscar por nombre (case-insensitive)
-            for (Producto p : productos) {
-                if (p.getNombre().equalsIgnoreCase(entrada)) {
+            for (Producto p : Productos) {
+                if (p.getNom().equalsIgnoreCase(entrada)) {
                     productoEncontrado = p;
                     break;
                 }
@@ -58,18 +67,18 @@ public class StockProductos {
     }
 
     private void modificarProducto(Producto producto) {
-        System.out.print("Nuevo nombre (" + producto.getNombre() + "): ");
+        System.out.print("Nuevo nombre (" + producto.getNom() + "): ");
         String nuevoNombre = scanner.nextLine();
         if (!nuevoNombre.isBlank()) {
-            producto.setNombre(nuevoNombre);
+            producto.setNom(nuevoNombre);
         }
 
-        System.out.print("Nuevo precio (" + producto.getPrecio() + "): ");
+        System.out.print("Nuevo precio (" + producto.getPre() + "): ");
         String nuevoPrecio = scanner.nextLine();
         if (!nuevoPrecio.isBlank()) {
             try {
                 double precio = Double.parseDouble(nuevoPrecio);
-                producto.setPrecio(precio);
+                producto.setPre(precio);
             } catch (NumberFormatException e) {
                 System.out.println("Precio inválido. Se mantiene el anterior.");
             }

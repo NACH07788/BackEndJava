@@ -5,7 +5,9 @@ import BACKEND_JAVA.services.*;
 import java.util.Scanner;
 
 public class MenuPrincipal {
-    public MenuPrincipal(){
+    private static Scanner scanner;
+
+    public MenuPrincipal(StockProductos stock){
         Scanner scanner = new Scanner(System.in);
         int opcion;
 
@@ -17,7 +19,7 @@ public class MenuPrincipal {
 
             switch (opcion) {
                 case 1:
-                    agregarProducto();
+                    agregarProducto(stock);
                     break;
                 case 2:
                     listarProductos();
@@ -57,10 +59,28 @@ public class MenuPrincipal {
         System.out.println("6) Listar pedidos");
         System.out.println("7) Salir");
     }
-    public static void agregarProducto() {
-        //Acá tengo que armar una lista de productos
-        //Y
-        System.out.println("Función 'Agregar producto' aún no implementada.");
+    public static void agregarProducto(StockProductos stock) {
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Menu para agregar un producto:");
+        System.out.println("Ingrese el nombre del producto: ");
+        String nombre = entrada.nextLine();
+        System.out.printf("Ingrese el precio de %s: ", nombre);
+        double precio = entrada.nextDouble();
+        System.out.printf("Ingrese el stock de %s: ", nombre);
+        int cantidad = entrada.nextInt();
+
+        int min = 0;
+        int max = 1000;
+        int randomNumber;
+
+        // Bucle para asegurarnos de que el ID no se repita
+        do {
+            randomNumber = (int) (Math.random() * (max - min + 1)) + min;
+        } while (stock.buscarProductoPorId(randomNumber) != null);
+
+        Producto producto = new Producto(randomNumber, nombre, precio, cantidad);
+        stock.agregarProducto(producto);
+        System.out.println("☣ Producto cargado exitosamente! ☣");
     }
 
     public static void listarProductos() {
